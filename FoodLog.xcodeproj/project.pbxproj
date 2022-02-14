@@ -39,6 +39,10 @@
 		E1793FD527B97EA9003C08A8 /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FD327B97EA8003C08A8 /* CheckView.swift */; };
 		E1793FD727B98802003C08A8 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FD627B98802003C08A8 /* Units.swift */; };
 		E1793FD827B98802003C08A8 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FD627B98802003C08A8 /* Units.swift */; };
+		E1793FDC27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */; };
+		E1793FDD27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */; };
+		E1793FE027BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
+		E1793FE127BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,8 @@
 		E1793FD027B949DF003C08A8 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		E1793FD327B97EA8003C08A8 /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		E1793FD627B98802003C08A8 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIngredient.swift; sourceTree = "<group>"; };
+		E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		E1718A2927B5BBF500550135 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E1793FDE27BAF0DF003C08A8 /* Utils */,
 				E1793FD927B9AD2B003C08A8 /* ElementViews */,
 				E1793FC327B86FFB003C08A8 /* Models */,
 				E1793FBC27B8044A003C08A8 /* Sheets */,
@@ -213,8 +220,17 @@
 			isa = PBXGroup;
 			children = (
 				E1793FD327B97EA8003C08A8 /* CheckView.swift */,
+				E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */,
 			);
 			path = ElementViews;
+			sourceTree = "<group>";
+		};
+		E1793FDE27BAF0DF003C08A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,9 +391,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1793FDC27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */,
 				E1793FCB27B87345003C08A8 /* Ingredients.swift in Sources */,
 				E1793FD727B98802003C08A8 /* Units.swift in Sources */,
 				E1793FCE27B88294003C08A8 /* CreateIngredientView.swift in Sources */,
+				E1793FE027BAF0F3003C08A8 /* UIScreen.swift in Sources */,
 				E110A88B27B735BC00E8B503 /* SettingsView.swift in Sources */,
 				E1718A5427B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5227B5BBF700550135 /* FoodLogApp.swift in Sources */,
@@ -395,9 +413,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1793FDD27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */,
 				E1793FCC27B87345003C08A8 /* Ingredients.swift in Sources */,
 				E1793FD827B98802003C08A8 /* Units.swift in Sources */,
 				E1793FCF27B88294003C08A8 /* CreateIngredientView.swift in Sources */,
+				E1793FE127BAF0F3003C08A8 /* UIScreen.swift in Sources */,
 				E110A88C27B735BC00E8B503 /* SettingsView.swift in Sources */,
 				E1718A5527B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5327B5BBF700550135 /* FoodLogApp.swift in Sources */,

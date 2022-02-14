@@ -22,7 +22,7 @@ struct CreateIngredientView: View {
 			Form {
 				Section {
 					TextField("Name", text: $ingredientName)
-					TextField("Name", text: $ingredientIcon)
+					TextField("Icon", text: $ingredientIcon)
 					ColorPicker("Theme color", selection: $ingredientColor, supportsOpacity: false)
 				}
 				

@@ -10,13 +10,13 @@ import SwiftUI
 struct CheckView: View {
 	@State var state: Bool = false
 	var title: String
-	var subtitle: String
+	var subtitle: String = ""
 	
     var body: some View {
 		Button {
 			state = !state
 		} label: {
-			HStack{
+			HStack {
 				Image(systemName: state ? "checkmark.square.fill" : "square").foregroundColor(state ? .accentColor : .primary).font(.system(size: 22))
 				Text(title).foregroundColor(.primary)
 				Spacer()

@@ -16,7 +16,6 @@ struct AddMealView: View {
 	@StateObject var neededIngredients = Ingredients()
 	
 	@State var showAddIngredientsSheet: Bool = false
-	@State var showCreateIngredientSheet: Bool = false
 	
     var body: some View {
 		NavigationView {
@@ -26,7 +25,7 @@ struct AddMealView: View {
 					TextField("Icon", text: $mealEmoji)
 				}
 				Section{
-					ForEach($neededIngredients.ingredients, id: \.id) { $ingredient in
+					ForEach($neededIngredients.neededIngredients, id: \.id) { $ingredient in
 						Stepper(
 							value: $ingredient.amount, in: 0...50) {
 								HStack {
@@ -46,27 +45,17 @@ struct AddMealView: View {
 							}
 					}.onDelete(perform: removeIngredient)
 					Button {
-						//showAddIngredientsSheet = true
-						let ingredient: Ingredient = Ingredient(name: "Apple", unit: "kg", amount: 0)
-						neededIngredients.ingredients.append(ingredient)
-						
+						showAddIngredientsSheet = true
 					} label: {
 						Label("Add Ingredients", systemImage: "plus")
 					}
 				} header: {
 					Text("Ingreedients")
 				} footer: {
-					VStack(alignment: .leading, spacing: 0) {
-						Text("Select ingredients for just one meal.\n")
-						Text("Didn't found what you wanted?")
-						Button("Create a new ingredient.") {
-							showCreateIngredientSheet = true
-						}
-					}
+					Text("Select ingredients for just one meal.\n")
 				}
 			}
-			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView()})
-			.sheet(isPresented: $showCreateIngredientSheet, content: {CreateIngredientView()})
+			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients)})
 			.navigationTitle("New meal")
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
@@ -75,14 +64,16 @@ struct AddMealView: View {
 					}
 				}
 				ToolbarItem(placement: .navigationBarTrailing) {
-					Text("Add")
+					Button("Add") {
+						
+					}.disabled(true)
 				}
 			}
 		}
 	}
 	
 	func removeIngredient(at offsets: IndexSet) {
-		neededIngredients.ingredients.remove(atOffsets: offsets)
+		neededIngredients.neededIngredients.remove(atOffsets: offsets)
 	}
 }
 
