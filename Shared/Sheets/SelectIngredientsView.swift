@@ -14,18 +14,20 @@ struct SelectIngredientsView: View {
 	
 	@State var selectedIngredients: [Ingredient] = []
 	
+	@State var searchText: String = ""
 	@State var showCreateIngredientSheet: Bool = false
 	
     var body: some View {
 		NavigationView {
 			ScrollView {
 				VStack(alignment: .leading) {
-					ForEach(ingredients.allIngredients, id: \.id) { ingredient in
+ ForEach(0...ingredients.allIngredients.count / 2, id: \.self) { num in
 						LazyVGrid(columns: [
 							GridItem(),
 							GridItem()
 							]) {
-								SelectableIngredient(ingredient: ingredient)
+								SelectableIngredient(ingredient: ingredients.allIngredients[num])
+								SelectableIngredient(ingredient: ingredients.allIngredients[num])
 							}
 						//CheckView(title: ingredient.name)
 					}
@@ -38,7 +40,7 @@ struct SelectIngredientsView: View {
 					.font(.footnote)
 					.foregroundColor(.secondary)
 					.padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
-				}.padding(EdgeInsets(top: 0, leading: 15, bottom: 5, trailing: 5))
+				}.padding(EdgeInsets(top: 0, leading: 15, bottom: 5, trailing: 15))
 					.navigationTitle("Add ingredients")
 					.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
@@ -55,6 +57,8 @@ struct SelectIngredientsView: View {
 					}
 				}
 				.sheet(isPresented: $showCreateIngredientSheet, content: {CreateIngredientView()})
+			}.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {
+				
 			}
 		}
     }

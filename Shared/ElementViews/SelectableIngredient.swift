@@ -17,7 +17,8 @@ struct SelectableIngredient: View {
 			isSelected = !isSelected
 		} label: {
 			ZStack(alignment: .topLeading) {
-				LinearGradient( colors: [ingredient.color, ingredient.color.opacity(0.6)], startPoint: .topLeading, endPoint: .bottomTrailing
+				if (ingredient.color == .white) { Color.black }
+				LinearGradient( colors: isSelected ? [ingredient.color == .white ? .black.opacity(0.2) : ingredient.color, ingredient.color.opacity(0.3)] : [ingredient.color == .white ? .white.opacity(0.4) : ingredient.color, ingredient.color.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing
 				).grayscale(isSelected ? 0 : 1)
 				VStack(alignment: .leading) {
 					Text(ingredient.name).foregroundStyle(.white).font(.title)
@@ -44,11 +45,11 @@ struct SelectableIngredient: View {
 			.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity)
 			.cornerRadius(26)
 		}
-    }
+	}
 }
 
 struct SelectableIngredient_Previews: PreviewProvider {
     static var previews: some View {
-		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .red, unit: "kg", amount: 0)).previewDisplayName("SelectableIngredientView")
+		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .white, unit: "kg", amount: 0)).previewDisplayName("SelectableIngredientView")
     }
 }
