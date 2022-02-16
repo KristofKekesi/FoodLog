@@ -21,16 +21,16 @@ struct SelectIngredientsView: View {
 		NavigationView {
 			ScrollView {
 				VStack(alignment: .leading) {
- ForEach(0...ingredients.allIngredients.count / 2, id: \.self) { num in
 						LazyVGrid(columns: [
 							GridItem(),
 							GridItem()
 							]) {
-								SelectableIngredient(ingredient: ingredients.allIngredients[num])
-								SelectableIngredient(ingredient: ingredients.allIngredients[num])
+								ForEach(ingredients.allIngredients
+											.filter({ searchText.isEmpty ? true : ($0.name.contains(searchText) || $0.icon.contains(searchText)) })
+								) { ingredient in
+									SelectableIngredient(ingredient: ingredient)
+								}
 							}
-						//CheckView(title: ingredient.name)
-					}
 					VStack(alignment: .leading) {
 						Text("Didn't found what you wanted?")
 						Button("Create a new ingredient.") {

@@ -43,6 +43,8 @@
 		E1793FDD27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */; };
 		E1793FE027BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
 		E1793FE127BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
+		E1793FE427BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */; };
+		E1793FE527BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 		E1793FD627B98802003C08A8 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIngredient.swift; sourceTree = "<group>"; };
 		E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
+		E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMealsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 		E110A88927B7357D00E8B503 /* PageViews */ = {
 			isa = PBXGroup;
 			children = (
+				E1793FE227BC5B70003C08A8 /* History */,
 				E110A88A27B735BC00E8B503 /* SettingsView.swift */,
 				E1793FB627B7F656003C08A8 /* MealsView.swift */,
 				E1793FB927B7F762003C08A8 /* HomeView.swift */,
@@ -231,6 +235,14 @@
 				E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E1793FE227BC5B70003C08A8 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +411,7 @@
 				E110A88B27B735BC00E8B503 /* SettingsView.swift in Sources */,
 				E1718A5427B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5227B5BBF700550135 /* FoodLogApp.swift in Sources */,
+				E1793FE427BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */,
 				E1793FD127B949DF003C08A8 /* HistoryView.swift in Sources */,
 				E1793FBE27B80464003C08A8 /* AddMealView.swift in Sources */,
 				E1793FC527B87016003C08A8 /* Ingredient.swift in Sources */,
@@ -421,6 +434,7 @@
 				E110A88C27B735BC00E8B503 /* SettingsView.swift in Sources */,
 				E1718A5527B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5327B5BBF700550135 /* FoodLogApp.swift in Sources */,
+				E1793FE527BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */,
 				E1793FD227B949DF003C08A8 /* HistoryView.swift in Sources */,
 				E1793FBF27B80464003C08A8 /* AddMealView.swift in Sources */,
 				E1793FC627B87016003C08A8 /* Ingredient.swift in Sources */,

@@ -28,16 +28,18 @@ struct SelectableIngredient: View {
 				}.padding(26)
 				VStack {
 					Spacer()
-					HStack {
-						Spacer()
-						Text(ingredient.icon).font(.system(size: 30))
-							.padding()
-							.background(.white)
-							.cornerRadius(100)
-							.padding(5)
-							.background(.gray.opacity(0.3))
-							.cornerRadius(100)
-							.grayscale(isSelected ? 0 : 0.5)
+					if (ingredient.icon != "") {
+						HStack {
+							Spacer()
+							Text(ingredient.icon).font(.system(size: 30))
+								.padding()
+								.background(.white)
+								.cornerRadius(100)
+								.padding(5)
+								.background(.gray.opacity(0.3))
+								.cornerRadius(100)
+								.grayscale(isSelected ? 0 : 0.5)
+						}
 					}
 				}.padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 15))
 			}
