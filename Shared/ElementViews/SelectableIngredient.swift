@@ -52,6 +52,6 @@ struct SelectableIngredient: View {
 
 struct SelectableIngredient_Previews: PreviewProvider {
     static var previews: some View {
-		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .white, unit: "kg", amount: 0)).previewDisplayName("SelectableIngredientView")
+		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .red, unit: "kg", amount: 0)).previewDisplayName("SelectableIngredientView")
     }
 }

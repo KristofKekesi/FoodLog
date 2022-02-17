@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct HomeView: View {
 	@State var showFavouriteMealsSheet: Bool = false
@@ -40,7 +41,21 @@ struct HomeView: View {
 						.font(.title)
 						.padding(EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 0))
 					VStack(alignment: .leading) {
-						Text("Vitamin A")
+						Button("Vitamin A") {
+							Task {
+							await HealthKitData().healthStore!.save(
+								HKQuantitySample(type: HKSampleType.quantityType(
+									forIdentifier: .dietaryVitaminA
+								)!,
+												 quantity: HKQuantity(
+													unit: HKUnit.gram(), doubleValue: 0.01),
+												 start: Date(),
+												 end: Date()
+								)) { success, error in
+									
+								}
+							}
+						}
 						Text("Vitamin B")
 						Text("Vitamin C")
 						Text("Vitamin D")
