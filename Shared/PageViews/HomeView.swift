@@ -15,6 +15,7 @@ struct HomeView: View {
 		NavigationView {
 			ScrollView {
 				VStack(alignment: .leading) {
+					if ((HealthKitData().healthStore?.supportsHealthRecords()) != nil) {
 					ZStack {
 						AngularGradient(colors: [.red, .orange, .yellow, .green, .blue, .purple, .red], center: .center)
 							.frame(minWidth: 10, maxWidth: .infinity, minHeight: 200, idealHeight: 200, maxHeight: 200)
@@ -25,6 +26,7 @@ struct HomeView: View {
 					}
 					.cornerRadius(26)
 					.padding(15)
+					}
 					Text("Favourites")
 						.font(.title)
 						.padding(EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 0))
@@ -43,7 +45,7 @@ struct HomeView: View {
 					VStack(alignment: .leading) {
 						Button("Vitamin A") {
 							Task {
-							await HealthKitData().healthStore!.save(
+							HealthKitData().healthStore!.save(
 								HKQuantitySample(type: HKSampleType.quantityType(
 									forIdentifier: .dietaryVitaminA
 								)!,

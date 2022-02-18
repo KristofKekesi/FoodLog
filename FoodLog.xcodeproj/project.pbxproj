@@ -135,6 +135,7 @@
 		E110A88927B7357D00E8B503 /* PageViews */ = {
 			isa = PBXGroup;
 			children = (
+				E1EDA44D27BF0CBC00BEFAF6 /* Settings */,
 				E1EDA44A27BDAC6D00BEFAF6 /* HistoryView.swift */,
 				E1793FE227BC5B70003C08A8 /* History */,
 				E110A88A27B735BC00E8B503 /* SettingsView.swift */,
@@ -253,6 +254,13 @@
 				E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		E1EDA44D27BF0CBC00BEFAF6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E1F2DBF027BD8E8F00B9963C /* Frameworks */ = {

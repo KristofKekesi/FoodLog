@@ -31,6 +31,10 @@ struct SettingsView: View {
 				}
 				Section(content: {
 					Text("Contact")
+					Button("Website") {
+						UIApplication.shared.open(URL(string: "https://www.kekesi.dev")!)
+					}
+					Text("License")
 				}, header: {
 					Text("About")
 				}, footer: {

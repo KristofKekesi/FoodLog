@@ -10,13 +10,33 @@ import SwiftUI
 struct HistoryView: View {
 	@State private var page: String = "nutrients"
 	
+	@State private var historyFilterDateFrom: Date = Date()
+	
     var body: some View {
 		NavigationView {
 			HStack {
 				switch page {
 				case "nutrients":
-					Button("Open health") {
-						UIApplication.shared.open(URL(string: "x-apple-health://browse/")!)
+					ScrollView {
+						ZStack {
+							AngularGradient(colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red], center: .center)
+								.frame(width: UIScreen.screenWidth - 40)
+					VStack(alignment: .leading, spacing: 15) {
+						Text("We don't want to reinwent the wheel.")
+							.font(.system(size: 24, weight: .bold))
+							.foregroundStyle(.primary)
+							Text("Health provides charts and explanations about nutrients and more than 100 medical recordswwsesas. For the data we write we suggest using Health.")
+							.foregroundStyle(.secondary)
+						Button {
+							UIApplication.shared.open(URL(string: 	"x-apple-health://browse/")!)
+						} label: {
+							Label("Open Health", systemImage: 	"heart.text.square.fill")
+						}.accentColor(.pink).buttonStyle(.borderedProminent)
+							.padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
+					}.padding(20).frame(width: UIScreen.screenWidth - 40)
+						.background(.ultraThinMaterial)
+						}.cornerRadius(26)
+							.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
 					}
 				case "ingredients":
 					Text("Ingredients")
@@ -64,7 +84,12 @@ struct HistoryView: View {
 				}
 				.toolbar {
 					ToolbarItem(placement: .navigationBarTrailing) {
-						Image(systemName: "line.3.horizontal.decrease")
+						Menu {
+							Label("From", systemImage: "backward.end")
+							Label("To", systemImage: "forward.end")
+						} label: {
+							Image(systemName: "line.3.horizontal.decrease")
+						}.disabled(!(page != "nutrients"))
 					}
 				}
 		}

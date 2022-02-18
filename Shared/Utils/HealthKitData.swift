@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-class HealthKitData {
+class HealthKitData{
 	var healthStore: HKHealthStore?
 	
 	init() {
