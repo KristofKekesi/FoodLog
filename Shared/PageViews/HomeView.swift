@@ -25,7 +25,7 @@ struct HomeView: View {
 						}.frame(minWidth: 10, maxWidth: .infinity, minHeight: 200, idealHeight: 200, maxHeight: 200).background(.ultraThinMaterial)
 					}
 					.cornerRadius(26)
-					.padding(15)
+					.padding(EdgeInsets(top: -5, leading: 15, bottom: 15, trailing: 15))
 					}
 					Text("Favourites")
 						.font(.title)
@@ -39,9 +39,13 @@ struct HomeView: View {
 					}
 					.cornerRadius(26)
 					.padding(EdgeInsets(top: -15, leading: 15, bottom: 15, trailing: 15))
-					Text("All")
+					Text("Hardcoded")
 						.font(.title)
 						.padding(EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 0))
+					HStack {
+						MealView(meal: Meal(name: "Omlette", subtitle: "3x 🥚", icon: "🍳", color: .orange, ingredients: []))
+						MealView(meal: Meal(name: "Omlette", subtitle: "4x 🥚", icon: "🍳", color: .orange, ingredients: []))
+					}.padding(EdgeInsets(top: -15, leading: 15, bottom: 15, trailing: 15))
 					VStack(alignment: .leading) {
 						Button("Vitamin A") {
 							Task {

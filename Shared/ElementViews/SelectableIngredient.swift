@@ -22,7 +22,7 @@ struct SelectableIngredient: View {
 				).grayscale(isSelected ? 0 : 1)
 				VStack(alignment: .leading) {
 					Text(ingredient.name).foregroundStyle(.white).font(.title)
-					Text("5 nutrients").foregroundStyle(.white.opacity(0.5)).font(.headline).font(.system(size: 22, weight: .bold))
+					Text("5 nutrients").foregroundStyle(.white.opacity(0.5)).font(.subheadline.weight(.bold))
 					Spacer()
 						.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity,	maxHeight: 70)
 				}.padding(26)

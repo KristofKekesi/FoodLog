@@ -54,17 +54,17 @@ struct HistoryView: View {
 								page = "nutrients"
 							} label: {
 								Label("Nutrients", systemImage: "heart")
-							}
+							}.disabled(page == "nutrients")
 							Button{
 								page = "ingredients"
 							} label: {
 								Label("Ingredients", systemImage: "leaf")
-							}
+							}.disabled(page == "ingredients")
 							Button{
 								page = "meals"
 							} label: {
 								Label("Meals", systemImage: "fork.knife")
-							}
+							}.disabled(page == "meals")
 						} label: {
 							HStack {
 								Image(systemName: "ellipsis.circle")
@@ -98,6 +98,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+		HistoryView().previewDisplayName("HistoryView")
     }
 }
