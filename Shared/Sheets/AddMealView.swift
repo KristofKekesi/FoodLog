@@ -29,7 +29,7 @@ struct AddMealView: View {
 						Stepper(
 							value: $ingredient.amount, in: 0...50) {
 								HStack {
-									Text("\(ingredient.name): \(ingredient.amount) \(ingredient.unit)")
+									Text("\(ingredient.name): \(ingredient.amount)")
 									Spacer()
 									Menu {
 										Text("kg")

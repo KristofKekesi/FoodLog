@@ -13,6 +13,6 @@ struct Ingredient: Identifiable {
 	let name: String
 	let icon: String
 	let color: Color
-	let unit: String
+	let unit: UnitIsMassOrVolume
 	var amount: Int
 }

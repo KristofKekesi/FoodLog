@@ -20,7 +20,7 @@ struct HistoryView: View {
 					ScrollView {
 						ZStack {
 							AngularGradient(colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red], center: .center)
-								.frame(width: UIScreen.screenWidth - 40)
+								.frame(width: UIScreen.screenWidth - 30)
 					VStack(alignment: .leading, spacing: 15) {
 						Text("We don't want to reinwent the wheel.")
 							.font(.system(size: 24, weight: .bold))
@@ -33,10 +33,10 @@ struct HistoryView: View {
 							Label("Open Health", systemImage: 	"heart.text.square.fill")
 						}.accentColor(.pink).buttonStyle(.borderedProminent)
 							.padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
-					}.padding(20).frame(width: UIScreen.screenWidth - 40)
+					}.padding(20).frame(width: UIScreen.screenWidth - 30)
 						.background(.ultraThinMaterial)
 						}.cornerRadius(26)
-							.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
+							.padding(EdgeInsets(top: -5, leading: 15, bottom: 0, trailing: 15))
 					}
 				case "ingredients":
 					Text("Ingredients")

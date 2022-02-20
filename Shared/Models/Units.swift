@@ -7,11 +7,6 @@
 
 import Foundation
 
-protocol UnitIsMassOrVolume {}
-
-extension UnitMass: UnitIsMassOrVolume {}
-extension UnitVolume: UnitIsMassOrVolume {}
-
 struct Unit {
 	let name: String
 	let sign: String

@@ -17,8 +17,9 @@ class HealthKitData{
 			
 			healthStore = HKHealthStore()
 			
-			// Things we want to read
-			let nutrients: Set = [ HKQuantityType.quantityType(forIdentifier: .dietaryIron)!,
+			// Things we want to write
+			let nutrients: Set = [
+				HKQuantityType.quantityType(forIdentifier: .dietaryIron)!,
 				HKQuantityType.quantityType(forIdentifier: .dietaryZinc)!,
 				HKQuantityType.quantityType(forIdentifier: .dietaryFiber)!,
 				HKQuantityType.quantityType(forIdentifier: .dietarySugar)!,
@@ -64,11 +65,18 @@ class HealthKitData{
 			
 			// Requesting auth
 			healthStore?.requestAuthorization(toShare: nutrients, read: nil) { success, error in
-				
+				if (error != nil) {
+					print("request failed")
+				}
 			}
 			
 		} else {
-			
+		}
+	}
+	
+	func addHKData(_ nutrients: [Nutrient]){
+		for nutrient in nutrients {
+			print(nutrient.name)
 		}
 	}
 }

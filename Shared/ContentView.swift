@@ -14,7 +14,7 @@ struct ContentView: View {
 			Image(systemName: "heart.text.square.fill")
 			Text("Home")
 		}
-			MealsView().tabItem {
+			AllView().tabItem {
 				Image(systemName: "fork.knife")
 				Text("Meals")
 			}
