@@ -12,5 +12,5 @@ struct Nutrient: Identifiable {
 	let id: UUID = UUID()
 	let name: String
 	let nutrient: HKQuantityTypeIdentifier
-	let ammount: Double
+	let quantity: HKQuantity
 }

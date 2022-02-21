@@ -76,7 +76,20 @@ class HealthKitData{
 	
 	func addHKData(_ nutrients: [Nutrient]){
 		for nutrient in nutrients {
-			print(nutrient.name)
+			print("\(nutrient.name) - \(nutrient.quantity)")
+			
+			HealthKitData().healthStore!.save(
+				HKQuantitySample(type: HKSampleType.quantityType(
+					forIdentifier: nutrient.nutrient
+				)!,
+								 quantity: nutrient.quantity,
+								 start: Date(),
+								 end: Date()
+				)) { success, error in
+					if (error != nil) {
+						print(error!)
+					}
+				}
 		}
 	}
 }
