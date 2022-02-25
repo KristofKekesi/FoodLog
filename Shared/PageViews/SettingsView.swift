@@ -30,10 +30,12 @@ struct SettingsView: View {
 					Text("LTR and RTL")
 				}
 				Section(content: {
-					Text("Contact")
+					NavigationLink(destination: SettingsContactView()) {
+						Text("Contact")
+					}
 					Button("Website") {
 						UIApplication.shared.open(URL(string: "https://www.kekesi.dev")!)
-					}
+					}.buttonStyle(.plain)
 					Text("License")
 				}, header: {
 					Text("About")
