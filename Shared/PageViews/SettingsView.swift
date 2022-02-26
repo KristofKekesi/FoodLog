@@ -14,8 +14,10 @@ struct SettingsView: View {
 		NavigationView {
 			Form {
 				Section {
-					Text("Health")
-					Text("iCloud")
+					NavigationLink(destination: SettingsHealthkitView()) {
+						Label("Health", systemImage: "heart.fill").foregroundColor(.pink)
+					}
+					Label("iCloud", systemImage: "icloud.fill").foregroundColor(.blue)
 				}
 				Section("Visuals") {
 					Text("App Tint")
@@ -31,7 +33,7 @@ struct SettingsView: View {
 				}
 				Section(content: {
 					NavigationLink(destination: SettingsContactView()) {
-						Text("Contact")
+						Text("Contacts")
 					}
 					Button("Website") {
 						UIApplication.shared.open(URL(string: "https://www.kekesi.dev")!)
@@ -40,13 +42,7 @@ struct SettingsView: View {
 				}, header: {
 					Text("About")
 				}, footer: {
-					VStack(alignment: .leading) {
-						VStack(alignment: .leading) {
-							Text("Suggest ingredients.")
-							Text("Send feedback.")
-						}
-						Text("\nMade in 🇭🇺 Hungary.").frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity)
-					}
+					Text("\nMade in 🇭🇺 Hungary.").frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity)
 				})
 					.navigationTitle("Settings")
 			}
