@@ -25,7 +25,7 @@ struct SelectableIngredient: View {
 					Text("5 nutrients").foregroundStyle(.white.opacity(0.5)).font(.subheadline.weight(.bold))
 					Spacer()
 						.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity,	maxHeight: 70)
-				}.padding(26)
+				}.padding(16)
 				VStack {
 					Spacer()
 					if (ingredient.icon != "") {
@@ -45,7 +45,7 @@ struct SelectableIngredient: View {
 			}
 			.aspectRatio(1, contentMode: .fit)
 			.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity)
-			.cornerRadius(26)
+			.cornerRadius(16)
 		}
 	}
 }

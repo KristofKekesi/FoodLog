@@ -24,7 +24,7 @@ struct HomeView: View {
 							Text("Grant permission to Health data.").foregroundStyle(.tertiary).font(.system(size: 16, weight: .bold))
 						}.frame(minWidth: 10, maxWidth: .infinity, minHeight: 200, idealHeight: 200, maxHeight: 200).background(.ultraThinMaterial)
 					}
-					.cornerRadius(26)
+					.cornerRadius(16)
 					.padding(EdgeInsets(top: -5, leading: 15, bottom: 15, trailing: 15))
 					}
 					Text("Favourites")
@@ -37,7 +37,7 @@ struct HomeView: View {
 							Text("A great place for your daily meals.").foregroundStyle(.tertiary).font(.system(size: 16, weight: .bold))
 						}.frame(minWidth: 10, maxWidth: .infinity, minHeight: 100, idealHeight: 100, maxHeight: 100).background(.ultraThinMaterial)
 					}
-					.cornerRadius(26)
+					.cornerRadius(16)
 					.padding(EdgeInsets(top: -15, leading: 15, bottom: 15, trailing: 15))
 					Text("Hardcoded")
 						.font(.title)

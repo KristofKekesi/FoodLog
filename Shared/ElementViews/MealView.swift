@@ -17,7 +17,7 @@ struct MealView: View {
 				Text(meal.subtitle).foregroundStyle(.white.opacity(0.5)).font(.headline)
 				Spacer()
 					.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity,	maxHeight: 70)
-			}.padding(26)
+			}.padding(16)
 			VStack {
 				Spacer()
 				if (meal.icon != "") {
@@ -36,7 +36,7 @@ struct MealView: View {
 		}.background(meal.color.opacity(0.65).background(.white.opacity(0.6)))
 		.aspectRatio(1, contentMode: .fit)
 		.frame(minWidth: 10, idealWidth: .infinity, maxWidth: .infinity)
-		.cornerRadius(26)
+		.cornerRadius(16)
 	}
 }
 

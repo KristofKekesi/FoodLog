@@ -17,7 +17,9 @@ struct SettingsView: View {
 					NavigationLink(destination: SettingsHealthkitView()) {
 						Label("Health", systemImage: "heart.fill").foregroundColor(.pink)
 					}
-					Label("iCloud", systemImage: "icloud.fill").foregroundColor(.blue)
+					NavigationLink(destination: SettingsIcloudView()) {
+						Label("iCloud", systemImage: "icloud.fill").foregroundColor(.blue)
+					}
 				}
 				Section("Visuals") {
 					Text("App Tint")

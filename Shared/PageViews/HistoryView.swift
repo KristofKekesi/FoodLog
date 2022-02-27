@@ -1,5 +1,5 @@
 //
-//  HistoryView.swift
+//  CatalogView.swift
 //  FoodLog
 //
 //  Created by Kristóf Kékesi on 2022. 02. 13..
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HistoryView: View {
+struct CatalogView: View {
 	@State private var page: String = "nutrients"
 	
 	@State private var historyFilterDateFrom: Date = Date()
@@ -35,7 +35,7 @@ struct HistoryView: View {
 							.padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
 					}.padding(20).frame(width: UIScreen.screenWidth - 30)
 						.background(.ultraThinMaterial)
-						}.cornerRadius(26)
+						}.cornerRadius(16)
 							.padding(EdgeInsets(top: -5, leading: 15, bottom: 0, trailing: 15))
 					}
 				case "ingredients":
@@ -46,7 +46,7 @@ struct HistoryView: View {
 					Text("This shouldn't have happend.")
 				}
 			}
-			.navigationTitle("History")
+			.navigationTitle("Catalog")
 				.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
 						Menu {
@@ -98,6 +98,6 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-		HistoryView().previewDisplayName("HistoryView")
+		CatalogView().previewDisplayName("CatalogView")
     }
 }

@@ -18,9 +18,9 @@ struct ContentView: View {
 				Image(systemName: "fork.knife")
 				Text("Meals")
 			}
-			HistoryView().tabItem {
-				Image(systemName: "chart.xyaxis.line")
-				Text("History")
+			CatalogView().tabItem {
+				Image(systemName: "plus.square.fill.on.square.fill")
+				Text("Catalog")
 			}
 			SettingsView().tabItem {
 				Image(systemName: "ellipsis")

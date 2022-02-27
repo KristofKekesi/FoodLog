@@ -52,9 +52,13 @@ struct AllView: View {
 							Button{
 								showAddNewSheat = true
 							} label: {
-								Image(systemName: "plus").padding()
+								Image(systemName: "plus")
 							}.disabled(page == "nutrients")
-							Image(systemName: "bookmark")
+							Button{
+								//TODO: finish
+							} label: {
+								Image(systemName: "bookmark")
+							}
 						}
 					}
 				}

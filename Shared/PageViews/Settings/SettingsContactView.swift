@@ -20,8 +20,16 @@ struct SettingsContactView: View {
 				}
 			})
 			Section("Social media") {
-				Text("Twitter")
-				Text("Instagram")
+				HStack{
+					Text("Twitter")
+					Spacer()
+					Text("@KristofKekesi").foregroundColor(.secondary)
+				}
+				HStack{
+					Text("Instagram")
+					Spacer()
+					Text("@kristofkekesiofficial").foregroundColor(.secondary)
+				}
 			}
 			.navigationTitle("Contacts")
 		}
