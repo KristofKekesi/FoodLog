@@ -10,8 +10,10 @@ import SwiftUI
 struct SettingsIcloudView: View {
     var body: some View {
 		Form {
-			Section("Last Successful Sync") {
+			Section {
 				Text("2022/02/27  0:47")
+			} header: {
+				Label("Last Successful Sync", systemImage: "checkmark.icloud")
 			}
 			ZStack {
 				AngularGradient(colors: [.mint, .blue, .indigo, .secondary], center: .center)
@@ -58,7 +60,7 @@ struct SettingsIcloudView: View {
 					Text("2022/02/24").foregroundColor(.secondary)
 				}
 			}
-		}.navigationTitle("iCloud")
+		}.navigationTitle("iCloud").navigationBarTitleDisplayMode(.inline)
     }
 }
 

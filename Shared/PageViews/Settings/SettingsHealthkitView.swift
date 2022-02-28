@@ -13,24 +13,17 @@ struct SettingsHealthkitView: View {
 			Section("Access") {
 				Button("Grant Access") {}
 			}
-				ZStack {
-					AngularGradient(colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red], center: .center)
-			VStack(alignment: .leading, spacing: 15) {
-				Text("We don't want to reinwent the wheel.")
-					.font(.system(size: 24, weight: .bold))
-					.foregroundStyle(.primary)
-					Text("Health provides charts and explanations about nutrients and more than 100 medical records. For the data we write we suggest using Health.")
-					.foregroundStyle(.secondary)
-				Button {
+			InfoPaneView(
+				title: "We don't want to reinwent the wheel.",
+				content: "Health provides charts and explanations about nutrients and more than 100 medical records. For the data we write we suggest using Health.",
+				response: AnyView(Button {
 					UIApplication.shared.open(URL(string: 	"x-apple-health://browse/")!)
-				} label: {
-					Label("Open Health", systemImage: "heart.text.square.fill").foregroundColor(.white)
-				}.accentColor(.pink).buttonStyle(.borderedProminent)
-					.padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
-			}.padding(20)
-						.frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity)
-				.background(.ultraThinMaterial)
-				}.listRowInsets(EdgeInsets())
+		  } label: {
+			  Label("Open Health", systemImage: "heart.text.square.fill").foregroundColor(.white)
+		  }.accentColor(.pink).buttonStyle(.borderedProminent)
+			  .padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
+			),
+				colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red]).listRowInsets(EdgeInsets())
 			Section {
 				Group {
 					HStack {
@@ -95,6 +88,6 @@ struct SettingsHealthkitView: View {
 
 struct SettingsHealthkitView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsHealthkitView()
+		SettingsHealthkitView().previewDisplayName("")
     }
 }
