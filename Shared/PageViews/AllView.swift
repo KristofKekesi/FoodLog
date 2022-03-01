@@ -27,21 +27,11 @@ struct AllView: View {
 					ToolbarItem(placement: .navigationBarLeading) {
 						HStack {
 							Menu {
-								Button {
-									page = "meals"
-								} label: {
-									Label("Meals", systemImage: "fork.knife")
-								}.disabled(page == "meals")
-								Button {
-									page = "ingredients"
-								} label: {
-									Label("Ingredients", systemImage: "leaf")
-								}.disabled(page == "ingredients")
-								Button {
-									page = "nutrients"
-								} label: {
-									Label("Nutrients", systemImage: "heart")
-								}.disabled(page == "nutrients")
+								Picker("", selection: $page) {
+									Label("Meals", systemImage: "fork.knife").tag("meals")
+									Label("Ingredients", systemImage: "leaf").tag("ingredients")
+									Label("Nutrients", systemImage: "heart").tag("nutrients")
+								}
 							} label: {
 								Image(systemName: "ellipsis.circle")
 							}

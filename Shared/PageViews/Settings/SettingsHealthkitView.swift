@@ -21,7 +21,6 @@ struct SettingsHealthkitView: View {
 		  } label: {
 			  Label("Open Health", systemImage: "heart.text.square.fill").foregroundColor(.white)
 		  }.accentColor(.pink).buttonStyle(.borderedProminent)
-			  .padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
 			),
 				colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red]).listRowInsets(EdgeInsets())
 			Section {
@@ -83,6 +82,7 @@ struct SettingsHealthkitView: View {
 				Text("Granting all nutrients are essential for user experience.")
 			}
 		}.navigationTitle("Health Data")
+			.navigationBarTitleDisplayMode(.inline)
 	}
 }
 

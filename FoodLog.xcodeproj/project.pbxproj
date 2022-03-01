@@ -41,8 +41,6 @@
 		E1793FDD27BAEF44003C08A8 /* SelectableIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */; };
 		E1793FE027BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
 		E1793FE127BAF0F3003C08A8 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */; };
-		E1793FE427BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */; };
-		E1793FE527BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */; };
 		E1AC155827CAE1230062FA6E /* SettingsHealthkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC155727CAE1230062FA6E /* SettingsHealthkitView.swift */; };
 		E1AC155927CAE1230062FA6E /* SettingsHealthkitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC155727CAE1230062FA6E /* SettingsHealthkitView.swift */; };
 		E1AC155B27CAF08A0062FA6E /* SettingsIcloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AC155A27CAF08A0062FA6E /* SettingsIcloudView.swift */; };
@@ -61,8 +59,8 @@
 		E1D3F07327C1CD68006F8B95 /* Nutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3F07127C1CD68006F8B95 /* Nutrient.swift */; };
 		E1D3F07527C94372006F8B95 /* SettingsContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3F07427C94372006F8B95 /* SettingsContactView.swift */; };
 		E1D3F07627C94372006F8B95 /* SettingsContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3F07427C94372006F8B95 /* SettingsContactView.swift */; };
-		E1EDA44B27BDAC6D00BEFAF6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDA44A27BDAC6D00BEFAF6 /* HistoryView.swift */; };
-		E1EDA44C27BDAC6D00BEFAF6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDA44A27BDAC6D00BEFAF6 /* HistoryView.swift */; };
+		E1EDA44B27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDA44A27BDAC6D00BEFAF6 /* CatalogView.swift */; };
+		E1EDA44C27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EDA44A27BDAC6D00BEFAF6 /* CatalogView.swift */; };
 		E1F2DBED27BD8CAA00B9963C /* HealthKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2DBEC27BD8CAA00B9963C /* HealthKitData.swift */; };
 		E1F2DBEE27BD8CAA00B9963C /* HealthKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F2DBEC27BD8CAA00B9963C /* HealthKitData.swift */; };
 		E1F2DBF227BD8E8F00B9963C /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F2DBF127BD8E8F00B9963C /* HealthKit.framework */; };
@@ -110,7 +108,6 @@
 		E1793FD627B98802003C08A8 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		E1793FDB27BAEF44003C08A8 /* SelectableIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableIngredient.swift; sourceTree = "<group>"; };
 		E1793FDF27BAF0F3003C08A8 /* UIScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
-		E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMealsView.swift; sourceTree = "<group>"; };
 		E1AC155727CAE1230062FA6E /* SettingsHealthkitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsHealthkitView.swift; sourceTree = "<group>"; };
 		E1AC155A27CAF08A0062FA6E /* SettingsIcloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsIcloudView.swift; sourceTree = "<group>"; };
 		E1AC155D27CC36C60062FA6E /* InfoPaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPaneView.swift; sourceTree = "<group>"; };
@@ -120,7 +117,7 @@
 		E1D3F06E27C1CB91006F8B95 /* UnitTypeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTypeProtocol.swift; sourceTree = "<group>"; };
 		E1D3F07127C1CD68006F8B95 /* Nutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nutrient.swift; sourceTree = "<group>"; };
 		E1D3F07427C94372006F8B95 /* SettingsContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactView.swift; sourceTree = "<group>"; };
-		E1EDA44A27BDAC6D00BEFAF6 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		E1EDA44A27BDAC6D00BEFAF6 /* CatalogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		E1F2DBEC27BD8CAA00B9963C /* HealthKitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitData.swift; sourceTree = "<group>"; };
 		E1F2DBEF27BD8E8F00B9963C /* FoodLog (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "FoodLog (iOS).entitlements"; sourceTree = "<group>"; };
 		E1F2DBF127BD8E8F00B9963C /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.4.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -164,8 +161,7 @@
 			children = (
 				E1D3F06A27C1C17E006F8B95 /* All */,
 				E1EDA44D27BF0CBC00BEFAF6 /* Settings */,
-				E1793FE227BC5B70003C08A8 /* History */,
-				E1EDA44A27BDAC6D00BEFAF6 /* HistoryView.swift */,
+				E1EDA44A27BDAC6D00BEFAF6 /* CatalogView.swift */,
 				E110A88A27B735BC00E8B503 /* SettingsView.swift */,
 				E1793FB627B7F656003C08A8 /* AllView.swift */,
 				E1793FB927B7F762003C08A8 /* HomeView.swift */,
@@ -279,14 +275,6 @@
 				E1D3F06E27C1CB91006F8B95 /* UnitTypeProtocol.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		E1793FE227BC5B70003C08A8 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				E1793FE327BC5B8B003C08A8 /* HistoryMealsView.swift */,
-			);
-			path = History;
 			sourceTree = "<group>";
 		};
 		E1D3F06A27C1C17E006F8B95 /* All */ = {
@@ -488,7 +476,6 @@
 				E1718A5427B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5227B5BBF700550135 /* FoodLogApp.swift in Sources */,
 				E1D3F04F27C1452C006F8B95 /* Meal.swift in Sources */,
-				E1793FE427BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */,
 				E1793FBE27B80464003C08A8 /* AddMealView.swift in Sources */,
 				E1D3F06F27C1CB91006F8B95 /* UnitTypeProtocol.swift in Sources */,
 				E1D3F07527C94372006F8B95 /* SettingsContactView.swift in Sources */,
@@ -497,7 +484,7 @@
 				E1793FBA27B7F762003C08A8 /* HomeView.swift in Sources */,
 				E1793FC127B849A5003C08A8 /* SelectIngredientsView.swift in Sources */,
 				E1793FB727B7F656003C08A8 /* AllView.swift in Sources */,
-				E1EDA44B27BDAC6D00BEFAF6 /* HistoryView.swift in Sources */,
+				E1EDA44B27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */,
 				E1793FD427B97EA8003C08A8 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +508,6 @@
 				E1718A5527B5BBF700550135 /* ContentView.swift in Sources */,
 				E1718A5327B5BBF700550135 /* FoodLogApp.swift in Sources */,
 				E1D3F05027C1452C006F8B95 /* Meal.swift in Sources */,
-				E1793FE527BC5B8B003C08A8 /* HistoryMealsView.swift in Sources */,
 				E1793FBF27B80464003C08A8 /* AddMealView.swift in Sources */,
 				E1D3F07027C1CB91006F8B95 /* UnitTypeProtocol.swift in Sources */,
 				E1D3F07627C94372006F8B95 /* SettingsContactView.swift in Sources */,
@@ -530,7 +516,7 @@
 				E1793FBB27B7F762003C08A8 /* HomeView.swift in Sources */,
 				E1793FC227B849A5003C08A8 /* SelectIngredientsView.swift in Sources */,
 				E1793FB827B7F656003C08A8 /* AllView.swift in Sources */,
-				E1EDA44C27BDAC6D00BEFAF6 /* HistoryView.swift in Sources */,
+				E1EDA44C27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */,
 				E1793FD527B97EA9003C08A8 /* CheckView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,13 +32,12 @@ struct SelectIngredientsView: View {
 								}
 							}
 					VStack(alignment: .leading) {
-						Text("Didn't found what you wanted?")
+						Text("Didn't found what you wanted?").foregroundColor(.secondary)
 						Button("Create a new ingredient.") {
 							showCreateIngredientSheet = true
-						}.foregroundColor(.accentColor)
+						}
 					}
 					.font(.footnote)
-					.foregroundColor(.secondary)
 					.padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
 				}.padding(EdgeInsets(top: 0, leading: 15, bottom: 5, trailing: 15))
 					.navigationTitle("Add ingredients")
@@ -57,9 +56,7 @@ struct SelectIngredientsView: View {
 					}
 				}
 				.sheet(isPresented: $showCreateIngredientSheet, content: {CreateIngredientView()})
-			}.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {
-				
-			}
+			}.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always)) {}
 		}
     }
 }
