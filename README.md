@@ -1,2 +1,2 @@
-# FoodLog
-Easily add your nutritions to Health based on the food you ate.
+# Nutrients
+Easily add nutritions to Health based on the food you eat.
