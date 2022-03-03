@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct SettingsHealthkitView: View {
-    var body: some View {
+	var body: some View {
 		Form {
 			Section("Access") {
-				Button("Grant Access") {}
+				Button {
+					print(usedNutrients.count)
+					print(usedNutrientsName.count)
+				} label: {
+					Label("Grant access", systemImage: "heart.text.square.fill").foregroundColor(.white).frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0,maxHeight: .infinity)
+				}.buttonStyle(.borderedProminent).accentColor(.green).background(.green).listRowInsets(EdgeInsets())
 			}
 			InfoPaneView(
 				title: "We don't want to reinwent the wheel.",
@@ -23,6 +28,11 @@ struct SettingsHealthkitView: View {
 		  }.accentColor(.pink).buttonStyle(.borderedProminent)
 			),
 				colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red]).listRowInsets(EdgeInsets())
+			Section {
+				ForEach(0..<usedNutrients.count, id: \.self) { num in
+					NutrientAccess(name: usedNutrientsName[num], isDenied: false)
+				}
+			}
 			Section {
 				Group {
 					HStack {
@@ -80,6 +90,17 @@ struct SettingsHealthkitView: View {
 				}
 			} footer: {
 				Text("Granting all nutrients are essential for user experience.")
+			}
+			Section {
+				Button {
+					
+				} label: {
+					Label("Deny access", systemImage: "heart.text.square.fill").foregroundColor(.white).frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+				}.buttonStyle(.borderedProminent).accentColor(.red).background(.red).listRowInsets(EdgeInsets())
+			} header: {
+				Text("Access")
+			} footer: {
+				Text("Denying access to write Health Data will result in Nutrients not working as intended.")
 			}
 		}.navigationTitle("Health Data")
 			.navigationBarTitleDisplayMode(.inline)

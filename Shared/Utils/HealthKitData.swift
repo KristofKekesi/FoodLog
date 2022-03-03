@@ -8,6 +8,48 @@
 import Foundation
 import HealthKit
 
+let usedNutrientsName: [String] = [
+	"Iron",
+	"Zinc",
+	"Fiber",
+	"Dietary Sugar",
+	"Water",
+	"Biotin",
+	"Copper",
+	"Folate",
+	"Iodine",
+	"Niacin",
+	"Sodium",
+	"Calcium",
+	"Protein",
+	"Thiamin",
+	"Caffeine",
+	"Chloride",
+	"Chromium",
+	"Selenium",
+	"Magnesium",
+	"Manganese",
+	"Potassium",
+	"Molybdenum",
+	"Phosphorus",
+	"Riboflavin",
+	"Dietary Cholesterol",
+	"Carbohydrates",
+	"Vitamin A",
+	"Vitamin B12",
+	"Vitamin B6",
+	"Vitamin C",
+	"Vitamin D",
+	"Vitamin E",
+	"Vitamin K",
+	"Total Fat",
+	"Saturated Fat",
+	"Polyunsaturated Fat",
+	"Monounsaturated Fat",
+	"Pantothenic Acid",
+	"Dietary Energy"
+]
+
 let usedNutrients: Set<HKQuantityTypeIdentifier> = [
 	.dietaryIron,
 	.dietaryZinc,
