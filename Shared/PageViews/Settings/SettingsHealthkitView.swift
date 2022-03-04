@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct SettingsHealthkitView: View {
 	var body: some View {
@@ -14,6 +15,17 @@ struct SettingsHealthkitView: View {
 				Button {
 					print(usedNutrients.count)
 					print(usedNutrientsName.count)
+					
+					let check = HealthKitData().healthStore!.authorizationStatus(for: HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryZinc)!).rawValue
+					
+					var isAvailable: Bool
+					
+					switch check {
+					case 2: isAvailable = true
+					case 1: isAvailable = false
+					default: isAvailable = false
+					}
+					print(isAvailable)
 				} label: {
 					Label("Grant access", systemImage: "heart.text.square.fill").foregroundColor(.white).frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, minHeight: 0,maxHeight: .infinity)
 				}.buttonStyle(.borderedProminent).accentColor(.green).background(.green).listRowInsets(EdgeInsets())
@@ -30,7 +42,7 @@ struct SettingsHealthkitView: View {
 				colors: [.red, .pink, .orange, .yellow, .purple, .indigo, .pink, .red]).listRowInsets(EdgeInsets())
 			Section {
 				ForEach(0..<usedNutrients.count, id: \.self) { num in
-					NutrientAccess(name: usedNutrientsName[num], isDenied: false)
+					NutrientAccess(name: usedNutrientsName[num], isDenied: true)
 				}
 			}
 			Section {
