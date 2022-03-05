@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Ingredient: Identifiable {
+struct Ingredient: Equatable {
 	let id: UUID = UUID()
 	let name: String
 	let icon: String

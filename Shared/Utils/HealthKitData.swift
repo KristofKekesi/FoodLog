@@ -50,7 +50,7 @@ let usedNutrientsName: [String] = [
 	"Dietary Energy"
 ]
 
-let usedNutrients: Set<HKQuantityTypeIdentifier> = [
+let usedNutrients: [HKQuantityTypeIdentifier] = [
 	.dietaryIron,
 	.dietaryZinc,
 	.dietaryFiber,

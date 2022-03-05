@@ -9,11 +9,14 @@ import SwiftUI
 
 struct SelectableIngredient: View {
 	var ingredient: Ingredient
+	@State var selectedIngredients: [Ingredient]
 	
-	@State var isSelected: Bool = false
+	//TODO: replace with selectedIngredients
+	@State var isSelected: Bool
 	
     var body: some View {
 		Button {
+			selectedIngredients.first(where: {$0 == ingredient}) ?? nil
 			isSelected = !isSelected
 		} label: {
 			ZStack(alignment: .topLeading) {

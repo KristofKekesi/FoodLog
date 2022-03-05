@@ -12,7 +12,7 @@ struct SelectIngredientsView: View {
 	
 	@Environment(\.dismiss) var dismiss
 	
-	@State var selectedIngredients: [Ingredient] = []
+	@State var selectedIngredients: [Ingredient]
 	
 	@State var searchText: String = ""
 	@State var showCreateIngredientSheet: Bool = false
@@ -52,7 +52,7 @@ struct SelectIngredientsView: View {
 							//let ingredient: Ingredient = Ingredient(name: "Apple", unit: "kg", amount: 0)
 							//ingredients.neededIngredients.append(ingredient)
 							dismiss()
-						}//.disabled(selectedIngredients.count == 0)
+						}.disabled(selectedIngredients.count == 0)
 					}
 				}
 				.sheet(isPresented: $showCreateIngredientSheet, content: {CreateIngredientView()})
@@ -62,7 +62,7 @@ struct SelectIngredientsView: View {
 }
 
 struct SelectIngredientsView_Previews: PreviewProvider {
-    static var previews: some View {
-		SelectIngredientsView().previewDisplayName("SelectIngredientsView")
+	static var previews: some View {
+		SelectIngredientsView(selectedIngredients: []).previewDisplayName("SelectIngredientsView")
     }
 }

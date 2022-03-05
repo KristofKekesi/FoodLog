@@ -14,6 +14,7 @@ struct AddMealView: View {
 	@State var mealEmoji: String = ""
 	
 	@StateObject var neededIngredients = Ingredients()
+	@State var selectedIngredients: [Ingredient] = []
 	
 	@State var showAddIngredientsSheet: Bool = false
 	
@@ -55,7 +56,7 @@ struct AddMealView: View {
 					Text("Select ingredients for just one meal.\n")
 				}
 			}
-			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients)})
+			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients, selectedIngredients: [])})
 			.navigationTitle("New meal")
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
