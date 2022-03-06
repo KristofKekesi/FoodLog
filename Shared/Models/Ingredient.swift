@@ -8,7 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Ingredient: Equatable {
+struct Ingredient: Equatable & Identifiable {
+	static func == (lhs: Ingredient, rhs: Ingredient) -> Bool {
+		lhs.id == rhs.id
+	}
+	
 	let id: UUID = UUID()
 	let name: String
 	let icon: String

@@ -56,7 +56,7 @@ struct AddMealView: View {
 					Text("Select ingredients for just one meal.\n")
 				}
 			}
-			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients, selectedIngredients: [])})
+			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients, selectedIngredients: $selectedIngredients)})
 			.navigationTitle("New meal")
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {

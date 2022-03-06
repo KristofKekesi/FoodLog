@@ -12,7 +12,7 @@ struct SelectIngredientsView: View {
 	
 	@Environment(\.dismiss) var dismiss
 	
-	@State var selectedIngredients: [Ingredient]
+	@Binding var selectedIngredients: [Ingredient]
 	
 	@State var searchText: String = ""
 	@State var showCreateIngredientSheet: Bool = false
@@ -28,7 +28,7 @@ struct SelectIngredientsView: View {
 								ForEach(ingredients.allIngredients
 											.filter({ searchText.isEmpty ? true : ($0.name.contains(searchText) || $0.icon.contains(searchText)) })
 								) { ingredient in
-									SelectableIngredient(ingredient: ingredient)
+									SelectableIngredient(ingredient: ingredient, selectedIngredients: $selectedIngredients)
 								}
 							}
 					VStack(alignment: .leading) {
@@ -49,9 +49,11 @@ struct SelectIngredientsView: View {
 					}
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Add") {
-							//let ingredient: Ingredient = Ingredient(name: "Apple", unit: "kg", amount: 0)
-							//ingredients.neededIngredients.append(ingredient)
+							print(selectedIngredients.count)
 							dismiss()
+							for selectedIngredient in selectedIngredients {
+								ingredients.neededIngredients.append(selectedIngredient)
+							}
 						}.disabled(selectedIngredients.count == 0)
 					}
 				}
@@ -63,6 +65,6 @@ struct SelectIngredientsView: View {
 
 struct SelectIngredientsView_Previews: PreviewProvider {
 	static var previews: some View {
-		SelectIngredientsView(selectedIngredients: []).previewDisplayName("SelectIngredientsView")
+		SelectIngredientsView(selectedIngredients: .constant([])).previewDisplayName("SelectIngredientsView")
     }
 }

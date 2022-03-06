@@ -9,20 +9,21 @@ import SwiftUI
 
 struct SelectableIngredient: View {
 	var ingredient: Ingredient
-	@State var selectedIngredients: [Ingredient]
-	
-	//TODO: replace with selectedIngredients
-	@State var isSelected: Bool
+	@Binding var selectedIngredients: [Ingredient]
 	
     var body: some View {
 		Button {
-			selectedIngredients.first(where: {$0 == ingredient}) ?? nil
-			isSelected = !isSelected
+			let index: Int? = selectedIngredients.firstIndex(where: {$0 == ingredient}) ?? nil
+			if (index != nil) {
+				selectedIngredients.remove(at: index!)
+			} else {
+				selectedIngredients.append(ingredient)
+			}
 		} label: {
 			ZStack(alignment: .topLeading) {
 				if (ingredient.color == .white) { Color.black }
-				LinearGradient( colors: isSelected ? [ingredient.color == .white ? .black.opacity(0.2) : ingredient.color, ingredient.color.opacity(0.3)] : [ingredient.color == .white ? .white.opacity(0.4) : ingredient.color, ingredient.color.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing
-				).grayscale(isSelected ? 0 : 1)
+				LinearGradient( colors: selectedIngredients.contains(ingredient) ? [ingredient.color == .white ? .black.opacity(0.2) : ingredient.color, ingredient.color.opacity(0.3)] : [ingredient.color == .white ? .white.opacity(0.4) : ingredient.color, ingredient.color.opacity(0.7)], startPoint: .topLeading, endPoint: .bottomTrailing
+				).grayscale(selectedIngredients.contains(ingredient) ? 0 : 1)
 				VStack(alignment: .leading) {
 					Text(ingredient.name).foregroundStyle(.white).font(.title)
 					Text("5 nutrients").foregroundStyle(.white.opacity(0.5)).font(.subheadline.weight(.bold))
@@ -41,7 +42,7 @@ struct SelectableIngredient: View {
 								.padding(5)
 								.background(.gray.opacity(0.3))
 								.cornerRadius(100)
-								.grayscale(isSelected ? 0 : 0.5)
+								.grayscale(selectedIngredients.contains(ingredient) ? 0 : 0.5)
 						}
 					}
 				}.padding(EdgeInsets(top: 0, leading: 0, bottom: 15, trailing: 15))
@@ -54,7 +55,7 @@ struct SelectableIngredient: View {
 }
 
 struct SelectableIngredient_Previews: PreviewProvider {
-    static var previews: some View {
-		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .red, unit: UnitMass.decigrams, amount: 0)).previewDisplayName("SelectableIngredientView")
+	static var previews: some View {
+		SelectableIngredient(ingredient: Ingredient(name: "Apple", icon: "🍎", color: .red, unit: UnitMass.decigrams, amount: 0), selectedIngredients: .constant([])).previewDisplayName("SelectableIngredientView")
     }
 }
