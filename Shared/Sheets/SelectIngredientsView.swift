@@ -49,8 +49,9 @@ struct SelectIngredientsView: View {
 					}
 					ToolbarItem(placement: .navigationBarTrailing) {
 						Button("Add") {
-							print(selectedIngredients.count)
 							dismiss()
+							
+							ingredients.neededIngredients.removeAll()
 							for selectedIngredient in selectedIngredients {
 								ingredients.neededIngredients.append(selectedIngredient)
 							}

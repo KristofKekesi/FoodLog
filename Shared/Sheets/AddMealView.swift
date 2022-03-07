@@ -74,6 +74,9 @@ struct AddMealView: View {
 	}
 	
 	func removeIngredient(at offsets: IndexSet) {
+		for oneOffset in offsets {
+			selectedIngredients.remove(at: oneOffset)
+		}
 		neededIngredients.neededIngredients.remove(atOffsets: offsets)
 	}
 }
