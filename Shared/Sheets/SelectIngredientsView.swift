@@ -10,12 +10,19 @@ import SwiftUI
 struct SelectIngredientsView: View {
 	@StateObject var ingredients = Ingredients()
 	
-	@Environment(\.dismiss) var dismiss
+	@Environment(\.dismiss) private var dismiss
 	
 	@Binding var selectedIngredients: [Ingredient]
 	
 	@State var searchText: String = ""
 	@State var showCreateIngredientSheet: Bool = false
+	
+	@State var modifiedSelectedIngredients: [Ingredient] = []
+	
+	init(selectedIngredients: Binding<[Ingredient]>) {
+		self._selectedIngredients = selectedIngredients
+		self._modifiedSelectedIngredients = State(initialValue: selectedIngredients.wrappedValue)
+	}
 	
     var body: some View {
 		NavigationView {
@@ -28,7 +35,7 @@ struct SelectIngredientsView: View {
 								ForEach(ingredients.allIngredients
 											.filter({ searchText.isEmpty ? true : ($0.name.contains(searchText) || $0.icon.contains(searchText)) })
 								) { ingredient in
-									SelectableIngredient(ingredient: ingredient, selectedIngredients: $selectedIngredients)
+									SelectableIngredient(ingredient: ingredient, selectedIngredients: $modifiedSelectedIngredients)
 								}
 							}
 					VStack(alignment: .leading) {
@@ -45,6 +52,7 @@ struct SelectIngredientsView: View {
 					ToolbarItem(placement: .navigationBarLeading) {
 						Button("Back") {
 							dismiss()
+							print("a")
 						}
 					}
 					ToolbarItem(placement: .navigationBarTrailing) {
@@ -52,10 +60,19 @@ struct SelectIngredientsView: View {
 							dismiss()
 							
 							ingredients.neededIngredients.removeAll()
-							for selectedIngredient in selectedIngredients {
+							for selectedIngredient in modifiedSelectedIngredients {
 								ingredients.neededIngredients.append(selectedIngredient)
 							}
-						}.disabled(selectedIngredients.count == 0)
+							
+							print(selectedIngredients.count)
+							print(modifiedSelectedIngredients.count)
+							selectedIngredients = modifiedSelectedIngredients
+							print(self.modifiedSelectedIngredients)
+							print("og")
+							print(self.selectedIngredients)
+							print("og " + String(selectedIngredients.count))
+							print("modified" + String(modifiedSelectedIngredients.count))
+						}.disabled(modifiedSelectedIngredients.count == 0)
 					}
 				}
 				.sheet(isPresented: $showCreateIngredientSheet, content: {CreateIngredientView()})

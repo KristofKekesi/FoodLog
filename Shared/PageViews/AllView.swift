@@ -52,7 +52,7 @@ struct AllView: View {
 						}
 					}
 				}
-		}.sheet(isPresented: $showAddNewSheat, content: {AddMealView()})
+		}.sheet(isPresented: $showAddNewSheat, content: {AddMealView(selectedIngredients: .constant([]))})
     }
 }
 

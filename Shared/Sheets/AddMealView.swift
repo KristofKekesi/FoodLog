@@ -10,15 +10,16 @@ import SwiftUI
 struct AddMealView: View {
 	@Environment(\.dismiss) var dismiss
 	
-	@State var mealName: String = ""
-	@State var mealEmoji: String = ""
+	@Binding var selectedIngredients: [Ingredient]
 	
 	@StateObject var neededIngredients = Ingredients()
-	@State var selectedIngredients: [Ingredient] = []
 	
 	@State var showAddIngredientsSheet: Bool = false
 	
-    var body: some View {
+	@State var mealName: String = ""
+	@State var mealEmoji: String = ""
+	
+	var body: some View {
 		NavigationView {
 			Form {
 				Section {
@@ -56,7 +57,7 @@ struct AddMealView: View {
 					Text("Select ingredients for just one meal.\n")
 				}
 			}
-			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(ingredients: neededIngredients, selectedIngredients: $selectedIngredients)})
+			.sheet(isPresented: $showAddIngredientsSheet, content: {SelectIngredientsView(selectedIngredients: $selectedIngredients)})
 			.navigationTitle("New meal")
 			.toolbar {
 				ToolbarItem(placement: .navigationBarLeading) {
@@ -83,6 +84,6 @@ struct AddMealView: View {
 
 struct AddMealView_Previews: PreviewProvider {
     static var previews: some View {
-		AddMealView().previewDisplayName("AddMealView")
+		AddMealView(selectedIngredients: .constant([])).previewDisplayName("AddMealView")
     }
 }
