@@ -64,16 +64,7 @@ struct HomeView: View {
 					}.padding(EdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 15))
 					HStack {
 						Button {
-							HealthKitData().addHKData([
-								Nutrient(name: "Energy", nutrient: .dietaryEnergyConsumed, quantity: HKQuantity(
-									unit: HKUnit.kilocalorie(), doubleValue: 488)),
-								Nutrient(name: "Fat", nutrient: .dietaryFatTotal, quantity: HKQuantity(
-									unit: HKUnit.gram(), doubleValue: 21.1)),
-								Nutrient(name: "Carbohydrates", nutrient: .dietaryCarbohydrates, quantity: HKQuantity(
-									unit: HKUnit.gram(), doubleValue: 61.6)),
-								Nutrient(name: "Protein", nutrient: .dietaryProtein, quantity: HKQuantity(
-									unit: HKUnit.gram(), doubleValue: 9.8))
-							])
+							
 						} label: {
 							MealView(meal: Meal(name: "Pasta", subtitle: "Soba", icon: "🥡", color: .brown, ingredients: []))
 						}

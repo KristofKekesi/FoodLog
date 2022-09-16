@@ -12,11 +12,16 @@ struct SettingsContactView: View {
     var body: some View {
 		Form{
 			Section(content: {
-				Label("Email", systemImage: "at")
+				HStack{
+					Label("Email", systemImage: "at")
+					Spacer()
+					Text("kristofkekesiofficial@gmail.com").foregroundColor(.secondary)
+				}
 			}, footer: {
 				VStack(alignment: .leading) {
-					Text("Suggest ingredients.")
+					Text("Send a feature request.")
 					Text("Send feedback.")
+					Text("Report a bug.")
 				}
 			})
 			Section("Social media") {
@@ -32,6 +37,7 @@ struct SettingsContactView: View {
 				}
 			}
 			.navigationTitle("Contacts")
+			.navigationBarTitleDisplayMode(.inline)
 		}
     }
 }

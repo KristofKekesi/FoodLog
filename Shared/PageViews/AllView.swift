@@ -17,12 +17,12 @@ struct AllView: View {
 				if (page == "meals") {
 					AllMealsView()
 				} else if (page == "ingredients") {
-					Text("ingredients")
+					AllInredientsView()
 				} else if (page == "nutrients") {
 					Text("nutrients")
 				}
 			}
-				.navigationTitle("Meals")
+			.navigationTitle(page.capitalized)
 				.toolbar {
 					ToolbarItem(placement: .navigationBarLeading) {
 						HStack {

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E110A88B27B735BC00E8B503 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110A88A27B735BC00E8B503 /* SettingsView.swift */; };
 		E110A88C27B735BC00E8B503 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E110A88A27B735BC00E8B503 /* SettingsView.swift */; };
+		E165671A280A2E1E00C6C909 /* PermissionsSwiftUIHealth in Frameworks */ = {isa = PBXBuildFile; productRef = E1656719280A2E1E00C6C909 /* PermissionsSwiftUIHealth */; };
+		E165671D280A2EA700C6C909 /* Drops in Frameworks */ = {isa = PBXBuildFile; productRef = E165671C280A2EA700C6C909 /* Drops */; };
+		E165671F280A348E00C6C909 /* AllInredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165671E280A348E00C6C909 /* AllInredientsView.swift */; };
+		E1656720280A348E00C6C909 /* AllInredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E165671E280A348E00C6C909 /* AllInredientsView.swift */; };
 		E1718A4327B5BBF700550135 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718A4227B5BBF700550135 /* Tests_iOS.swift */; };
 		E1718A4527B5BBF700550135 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718A4427B5BBF700550135 /* Tests_iOSLaunchTests.swift */; };
 		E1718A4F27B5BBF700550135 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718A4E27B5BBF700550135 /* Tests_macOS.swift */; };
@@ -87,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		E110A88A27B735BC00E8B503 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E165671E280A348E00C6C909 /* AllInredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInredientsView.swift; sourceTree = "<group>"; };
 		E1718A2A27B5BBF500550135 /* FoodLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogApp.swift; sourceTree = "<group>"; };
 		E1718A2B27B5BBF500550135 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E1718A2C27B5BBF700550135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,7 +136,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E165671D280A2EA700C6C909 /* Drops in Frameworks */,
 				E1F2DBF227BD8E8F00B9963C /* HealthKit.framework in Frameworks */,
+				E165671A280A2E1E00C6C909 /* PermissionsSwiftUIHealth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D3F06B27C1C207006F8B95 /* AllMealsView.swift */,
+				E165671E280A348E00C6C909 /* AllInredientsView.swift */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -323,6 +331,10 @@
 			dependencies = (
 			);
 			name = "FoodLog (iOS)";
+			packageProductDependencies = (
+				E1656719280A2E1E00C6C909 /* PermissionsSwiftUIHealth */,
+				E165671C280A2EA700C6C909 /* Drops */,
+			);
 			productName = "FoodLog (iOS)";
 			productReference = E1718A3127B5BBF700550135 /* FoodLog.app */;
 			productType = "com.apple.product-type.application";
@@ -415,6 +427,10 @@
 				Base,
 			);
 			mainGroup = E1718A2427B5BBF500550135;
+			packageReferences = (
+				E1656718280A2E1E00C6C909 /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */,
+				E165671B280A2EA700C6C909 /* XCRemoteSwiftPackageReference "Drops" */,
+			);
 			productRefGroup = E1718A3227B5BBF700550135 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -488,6 +504,7 @@
 				E1F2DBED27BD8CAA00B9963C /* HealthKitData.swift in Sources */,
 				E1793FBA27B7F762003C08A8 /* HomeView.swift in Sources */,
 				E1793FC127B849A5003C08A8 /* SelectIngredientsView.swift in Sources */,
+				E165671F280A348E00C6C909 /* AllInredientsView.swift in Sources */,
 				E1793FB727B7F656003C08A8 /* AllView.swift in Sources */,
 				E1EDA44B27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */,
 				E1793FD427B97EA8003C08A8 /* CheckView.swift in Sources */,
@@ -521,6 +538,7 @@
 				E1F2DBEE27BD8CAA00B9963C /* HealthKitData.swift in Sources */,
 				E1793FBB27B7F762003C08A8 /* HomeView.swift in Sources */,
 				E1793FC227B849A5003C08A8 /* SelectIngredientsView.swift in Sources */,
+				E1656720280A348E00C6C909 /* AllInredientsView.swift in Sources */,
 				E1793FB827B7F656003C08A8 /* AllView.swift in Sources */,
 				E1EDA44C27BDAC6D00BEFAF6 /* CatalogView.swift in Sources */,
 				E1793FD527B97EA9003C08A8 /* CheckView.swift in Sources */,
@@ -923,6 +941,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1656718280A2E1E00C6C909 /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jevonmao/PermissionsSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		E165671B280A2EA700C6C909 /* XCRemoteSwiftPackageReference "Drops" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/omaralbeik/Drops.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1656719280A2E1E00C6C909 /* PermissionsSwiftUIHealth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1656718280A2E1E00C6C909 /* XCRemoteSwiftPackageReference "PermissionsSwiftUI" */;
+			productName = PermissionsSwiftUIHealth;
+		};
+		E165671C280A2EA700C6C909 /* Drops */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E165671B280A2EA700C6C909 /* XCRemoteSwiftPackageReference "Drops" */;
+			productName = Drops;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E1718A2527B5BBF500550135 /* Project object */;
 }
